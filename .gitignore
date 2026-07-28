@@ -1,0 +1,7 @@
+venv312/
+.idea/
+__pycache__/
+*.pyc
+logs/
+users.db
+*.xlsx

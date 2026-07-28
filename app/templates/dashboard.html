@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f5f5f5;
+            text-align:center;
+        }
+
+        .container{
+
+            width:500px;
+            margin:80px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+
+        }
+
+        h2{
+
+            color:#333;
+
+        }
+
+        button{
+
+            width:250px;
+            padding:12px;
+            margin:10px;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+            border-radius:5px;
+
+        }
+
+        .run{
+
+            background:#28a745;
+            color:white;
+
+        }
+
+        .run:hover{
+
+            background:#218838;
+
+        }
+
+        .logout{
+
+            background:#dc3545;
+            color:white;
+
+        }
+
+        .logout:hover{
+
+            background:#c82333;
+
+        }
+
+        .download{
+
+            background:#007bff;
+            color:white;
+
+        }
+
+        .download:hover{
+
+            background:#0069d9;
+
+        }
+
+        .msg{
+
+            color:green;
+            font-weight:bold;
+            margin:20px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Welcome {{ username }}</h2>
+
+    {% if message %}
+
+        <div class="msg">
+
+            {{ message }}
+
+        </div>
+
+    {% endif %}
+
+    <form action="/run" method="post">
+
+        <button class="run" type="submit">
+
+            Run Amazon Scraper
+
+        </button>
+
+    </form>
+
+    <a href="/products.xlsx">
+
+        <button class="download">
+
+            Download Excel
+
+        </button>
+
+    </a>
+
+    <br>
+
+    <a href="/logout">
+
+        <button class="logout">
+
+            Logout
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
